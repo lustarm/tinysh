@@ -4,7 +4,7 @@
 
 - [x] Create the main shell program in C.
 - [x] Implement a basic command prompt that takes user input.
-- [ ] Parse and tokenize user input.
+- [x] Parse and tokenize user input.
 - [x] Execute single commands (e.g., `ls`, `pwd`) and display their output.
 - [x] Handle errors gracefully and display error messages.
 
