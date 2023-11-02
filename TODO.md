@@ -2,11 +2,11 @@
 
 ## Milestone 1: Basic Shell Functionality
 
-- [ ] Create the main shell program in C.
-- [ ] Implement a basic command prompt that takes user input.
+- [x] Create the main shell program in C.
+- [x] Implement a basic command prompt that takes user input.
 - [ ] Parse and tokenize user input.
-- [ ] Execute single commands (e.g., `ls`, `pwd`) and display their output.
-- [ ] Handle errors gracefully and display error messages.
+- [x] Execute single commands (e.g., `ls`, `pwd`) and display their output.
+- [x] Handle errors gracefully and display error messages.
 
 ## Milestone 2: Command Execution and Built-in Commands
 
