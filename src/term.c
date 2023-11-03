@@ -28,7 +28,7 @@ void removeCRLF(char *input) {
 }
 
 void add_command(const char *name, CommandFunction func) {
-    for (int i = 0; i < sizeof(commands) / sizeof(commands[0]); i++) {
+    for (long unsigned int i = 0; i < sizeof(commands) / sizeof(commands[0]); i++) {
         if (commands[i].name == NULL) {
             commands[i].name = name;
             commands[i].func = func;
@@ -38,7 +38,7 @@ void add_command(const char *name, CommandFunction func) {
 }
 
 int handle_command(char *buf) {
-    for (int i = 0; i < sizeof(commands) / sizeof(commands[0]); i++) {
+    for (long unsigned int i = 0; i < sizeof(commands) / sizeof(commands[0]); i++) {
         if (commands[i].name != NULL && strncmp(buf, commands[i].name, strlen(commands[i].name)) == 0) {
             commands[i].func();
             return 0;
@@ -53,6 +53,8 @@ int start_term(){
     // add commands
     add_command("quit", quit_command);
     add_command("clear", clear_command);
+    add_command("help", help_command);
+    add_command("ls", list_command);
 
     // main logic loop
     while(1){

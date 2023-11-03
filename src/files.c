@@ -3,23 +3,9 @@
 #include <dirent.h>
 #include <string.h>
 
-void quit_command() {
-    exit(0);
-}
-
-void clear_command() {
-    printf("\e[2J\e[1;1H");
-}
-
-void help_command(){
-    printf("Help : Shows this screen\n");
-    printf("Clear: Clears the screen\n");
-    printf("Quit : Quits the program\n");
-    printf("Ls   : Lists current directory\n");
-}
-
-void list_command(){
-    DIR *dir = opendir(".");
+// will probably find a way to use this later
+int get_build_dir(){
+    DIR *dir = opendir("./build/");
     if(dir == NULL){
         printf("ERROR: Failed to find directory\n");
         goto clean;
@@ -35,4 +21,6 @@ void list_command(){
     }
 clean:
     closedir(dir);
+    return 0;
 }
+
