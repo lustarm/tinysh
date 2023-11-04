@@ -162,8 +162,8 @@ void add_command(const char *name, CommandFunction func) {
 
 int handle_command(char *buf) {
     // add later
-    //int count_strings = 0;
-    //char **split_string = split(buf, " ", &count_strings);
+    // int count_strings = 0;
+    // char **split_string = split(buf, " ", &count_strings);
     to_lower(buf);
     for (long unsigned int i = 0; i < sizeof(commands) / sizeof(commands[0]); i++) {
         if (commands[i].name != NULL && strncmp(buf, commands[i].name, strlen(commands[i].name)) == 0) {

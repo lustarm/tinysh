@@ -18,6 +18,16 @@ void help_command(){
     printf("Ls   : Lists current directory\n");
 }
 
+#include <sys/stat.h>
+
+int is_folder(const char *path) {
+    struct stat st;
+    if (stat(path, &st) != 0) {
+        return -1;
+    }
+    return S_ISDIR(st.st_mode);
+}
+
 void list_command(){
     DIR *dir = opendir(".");
     if(dir == NULL){
@@ -31,7 +41,11 @@ void list_command(){
             continue;
         }
         // print the file name will change later
-        printf("%s\n", entry->d_name);
+        if(is_folder(entry->d_name)){
+            printf("%s/\n", entry->d_name);
+        } else {
+            printf("%s\n", entry->d_name);
+        }
     }
 clean:
     closedir(dir);
